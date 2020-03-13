@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CATALOG>
+  <CD>
+    <UserName>admin</UserName>
+    <Password>Admin123</Password>
+  </CD>
+  <CD>
+    <UserName>admin1</UserName>
+    <Password>adm1234</Password>
+  </CD>
+</CATALOG>
