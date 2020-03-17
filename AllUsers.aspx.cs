@@ -6,7 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Data;
-
+using regestrationV2.services;
 
 namespace regestrationV2
 {
@@ -23,37 +23,25 @@ namespace regestrationV2
 
             else
             {
+                DBAccesor dbAccessor = ServiceLocator.Instance.GetService<DBAccesor>();
+                string cmdString = string.Format("SELECT * FROM UserDetails");
+                DataTable dataTable= dbAccessor.runSelectCmd(cmdString);
 
-
-
-
-
-
-                string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\dev\HTML\regestrationV2\App_Data\User_Data.mdf;Integrated Security=True";
-
-                using (SqlConnection conn = new SqlConnection(connectionString))
-                {
-                    string cmdString = string.Format("SELECT * FROM UserDetails");
-                    SqlCommand cmd = new SqlCommand(cmdString, conn);
-                    conn.Open();
-                    SqlDataAdapter da = new SqlDataAdapter(cmdString, connectionString);
-                    DataSet ds = new DataSet();
-                    da.Fill(ds);
-
-                    for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
-                        userTable += 
-                            "<table><tr><td>User name: " + ds.Tables[0].Rows[i]["UserName"]
-                            + "</td></tr>" + "<tr><td>Password: " + ds.Tables[0].Rows[i]["Password"] 
-                            + "</td></tr>" + "<tr><td>Mail: " + ds.Tables[0].Rows[i]["Mail"]
-                            + "</td></tr>" + "<tr><td>Phone: " + ds.Tables[0].Rows[i]["Phone"] 
-                            + "</td></tr>" + "<tr><td>Address: " + ds.Tables[0].Rows[i]["Adress"] 
-                            + "</td></tr>" + "<tr><td>Gender: " + ds.Tables[0].Rows[i]["Gender"] 
-                            + "</td></tr>" + "<tr><td>Date of Birth: " + ds.Tables[0].Rows[i]["DateOfBirth"] 
-                            + "</td></tr>" ;
-                    }
-
-                    userTable += "</table>";
-                }
+                for (int i = 0; i < dataTable.Rows.Count; i++)
+                    userTable +=
+                        "<table><tr><td>User name: " + dataTable.Rows[i]["UserName"]
+                        + "</td></tr>" + "<tr><td>Password: " + dataTable.Rows[i]["Password"]
+                        + "</td></tr>" + "<tr><td>Mail: " + dataTable.Rows[i]["Mail"]
+                        + "</td></tr>" + "<tr><td>Phone: " + dataTable.Rows[i]["Phone"]
+                        + "</td></tr>" + "<tr><td>Address: " + dataTable.Rows[i]["Adress"]
+                        + "</td></tr>" + "<tr><td>Gender: " + dataTable.Rows[i]["Gender"]
+                        + "</td></tr>" + "<tr><td>Date of Birth: " + dataTable.Rows[i]["DateOfBirth"]
+                        + "</td></tr>";
             }
+
+            userTable += "</table>";
         }
     }
+}
+
+

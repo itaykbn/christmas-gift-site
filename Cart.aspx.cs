@@ -6,8 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Data;
-
-
+using regestrationV2.services;
 
 namespace regestrationV2
 {
@@ -36,64 +35,41 @@ namespace regestrationV2
                 }
 
             }
-            string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\dev\HTML\regestrationV2\App_Data\User_Data.mdf;Integrated Security=True";
-            using (SqlConnection conn = new SqlConnection(connectionString))
+       
+            DBAccesor dbAccessor = ServiceLocator.Instance.GetService<DBAccesor>();
+            string cmdString1 = string.Format("SELECT * FROM Cart WHERE ([UserName] = N'{0}')", Session["UserName"]);
+
+            DataTable dataTable = dbAccessor.runSelectCmd(cmdString1);
+            for (int i = 0; i < dataTable.Rows.Count; i++)
             {
+                cartTable +=
+                    "<tr><td> Item: " + dataTable.Rows[i]["OrderName"] + "</td>"
+                    + "<td> ItemNum: " + dataTable.Rows[i]["OrderId"] + " </td ></tr> "
+                    + "<td> Price: " + dataTable.Rows[i]["Price"] + " </td >";
 
-
-                string cmdString1 = string.Format("SELECT * FROM Cart WHERE ([UserName] = N'{0}')", Session["UserName"]);
-                SqlCommand cmd1 = new SqlCommand(cmdString1, conn);
-
-
-                string cmdString2 = string.Format($"delete from Cart where OrderId = {id}");
-
-                SqlCommand cmd2 = new SqlCommand(cmdString2, conn);
-
-                conn.Open();
-
-                SqlDataAdapter da = new SqlDataAdapter(cmdString1, connectionString);
-                DataSet ds = new DataSet();
-                da.Fill(ds);
-
-
-
-
-                for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
-                {
-                    cartTable +=
-                        "<tr><td> Item: " + ds.Tables[0].Rows[i]["OrderName"] + "</td>"
-                        + "<td> ItemNum: " + ds.Tables[0].Rows[i]["OrderId"] + " </td ></tr> "
-                        + "<td> Price: " + ds.Tables[0].Rows[i]["Price"] + " </td >";
-
-                    totalAmount += (int)ds.Tables[0].Rows[i]["Price"];
-                }
-
-                cartTable += "</table>";
-                if (Request.Form["submit"] != null)
-                {
-                    cmd2.ExecuteNonQuery();
-                    Response.Redirect("Cart.aspx");
-                }
-                Session["TotalPrice"] = totalAmount;
-
-
-
-
+                totalAmount += (int)dataTable.Rows[i]["Price"];
             }
+
+            cartTable += "</table>";
+
+            if (Request.Form["submit"] != null)
+            {
+                string delCmd = string.Format($"delete from Cart where OrderId = {id}");
+                dbAccessor.runSqlCommand(delCmd);
+
+                Response.Redirect("Cart.aspx");
+            }
+            Session["TotalPrice"] = totalAmount;
+
+            //   }
         }
 
         private bool isExist(string user, int id)
         {
             string cmdString = string.Format($"SELECT * FROM  Cart WHERE UserName = N'{user}' and OrderId = {id} ");
-            string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\dev\HTML\regestrationV2\App_Data\User_Data.mdf;Integrated Security=True";
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
-                SqlCommand cmd = new SqlCommand(cmdString, conn);
-                conn.Open();
-                SqlDataReader dr = cmd.ExecuteReader();
-
-                return dr.HasRows;
-            }
+    
+            DBAccesor dbAccessor = ServiceLocator.Instance.GetService<DBAccesor>();
+            return dbAccessor.isExist(cmdString);
 
         }
     }

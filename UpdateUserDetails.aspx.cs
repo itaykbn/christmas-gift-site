@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Data;
 using System.Xml;
+using regestrationV2.services;
 
 namespace regestrationV2
 {
@@ -35,29 +36,25 @@ namespace regestrationV2
             else
             {
                 user = Session["UserName"].ToString();
-
-                
-
-                string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\dev\HTML\regestrationV2\App_Data\User_Data.mdf;Integrated Security=True";
-
+               
                 string cmdStr = string.Format("SELECT  * FROM  UserDetails WHERE (UserName = N'{0}')", user);
+                DBAccesor dbAccesor = ServiceLocator.Instance.GetService<DBAccesor>();
+                DataTable dataTable = dbAccesor.runSelectCmd(cmdStr);
 
-                SqlDataAdapter da = new SqlDataAdapter(cmdStr, connectionString);
-                DataSet ds = new DataSet(); 
-                da.Fill(ds); 
-                password = ds.Tables[0].Rows[0]["Password"].ToString();
-                mail = ds.Tables[0].Rows[0]["Mail"].ToString();
-                phone = ds.Tables[0].Rows[0]["Phone"].ToString();
-                address = ds.Tables[0].Rows[0]["Adress"].ToString();
-                gender = ds.Tables[0].Rows[0]["Gender"].ToString();
-                birthDate = ds.Tables[0].Rows[0]["DateOfBirth"].ToString();
-                lName = ds.Tables[0].Rows[0]["LastName"].ToString();
-                fName = ds.Tables[0].Rows[0]["FirstName"].ToString();
+               
+                password = dataTable.Rows[0]["Password"].ToString();
+                mail = dataTable.Rows[0]["Mail"].ToString();
+                phone = dataTable.Rows[0]["Phone"].ToString();
+                address = dataTable.Rows[0]["Adress"].ToString();
+                gender = dataTable.Rows[0]["Gender"].ToString();
+                birthDate = dataTable.Rows[0]["DateOfBirth"].ToString();
+                lName = dataTable.Rows[0]["LastName"].ToString();
+                fName = dataTable.Rows[0]["FirstName"].ToString();
 
 
                 if (Request.Form["updateBtn"] != null)
                 {
-                    
+                   
                     password = Request.Form["pass"].ToString();
                     mail = Request.Form["mail"].ToString();
                     phone = Request.Form["phone"].ToString();
@@ -67,28 +64,22 @@ namespace regestrationV2
                     lName = Request.Form["lname"].ToString();
                     fName = Request.Form["fname"].ToString();
 
-                    ds.Tables[0].Rows[0]["FirstName"] = fName;
-                    ds.Tables[0].Rows[0]["LastName"] = lName;
-                    ds.Tables[0].Rows[0]["Password"] = password;
-                    ds.Tables[0].Rows[0]["Mail"] = mail;
-                    ds.Tables[0].Rows[0]["Phone"] = phone;
-                    ds.Tables[0].Rows[0]["Adress"] = address;
-                    ds.Tables[0].Rows[0]["Gender"] = gender;
-                    ds.Tables[0].Rows[0]["DateOfBirth"] = birthDate;
+                    dataTable.Rows[0]["FirstName"] = fName;
+                    dataTable.Rows[0]["LastName"] = lName;
+                    dataTable.Rows[0]["Password"] = password;
+                    dataTable.Rows[0]["Mail"] = mail;
+                    dataTable.Rows[0]["Phone"] = phone;
+                    dataTable.Rows[0]["Adress"] = address;
+                    dataTable.Rows[0]["Gender"] = gender;
+                    dataTable.Rows[0]["DateOfBirth"] = birthDate;
 
-                    SqlCommandBuilder builder = new SqlCommandBuilder(da);
-                    da.UpdateCommand = builder.GetUpdateCommand();
-                    da.Update(ds);
-
+                    dbAccesor.updateTable(cmdStr, dataTable);
                     Response.Redirect("UserDetails.aspx");
                 }
             }
 
 
         }
-
-
-
 
     }
 }

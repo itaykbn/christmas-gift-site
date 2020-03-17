@@ -6,6 +6,8 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
+using regestrationV2.services;
+
 namespace regestrationV2
 {
     public partial class WebForm6 : System.Web.UI.Page
@@ -45,25 +47,14 @@ namespace regestrationV2
          */
         private bool IsExist(string username, string password)
         {
-         
-            string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\dev\HTML\regestrationV2\App_Data\User_Data.mdf;Integrated Security=True";
-
-            using (SqlConnection conObj = new SqlConnection(connectionString))
-            {
-                string cmdStr = string.Format("SELECT * FROM UserDetails WHERE [UserName]=N'{0}' and Password=N'{1}'", username, password);
-
-                SqlCommand cmdObj = new SqlCommand(cmdStr, conObj);
-                conObj.Open();
-
-                SqlDataReader dr = cmdObj.ExecuteReader();
-
-                return dr.HasRows;
-            }
+            string cmdStr = string.Format("SELECT * FROM UserDetails WHERE [UserName]=N'{0}' and Password=N'{1}'", username, password);
+            DBAccesor dbAccessor = ServiceLocator.Instance.GetService<DBAccesor>();
+            return dbAccessor.isExist(cmdStr);
         }
 
         private bool IsAdmin(string user)
         {
-
+            XMLAccesor xmlAccessor = ServiceLocator.Instance.GetService<XMLAccesor>();
             DataSet ds = new DataSet();
             ds.ReadXml(System.Web.HttpContext.Current.Server.MapPath("AdminList.xml"));
             foreach (DataRow r in ds.Tables[0].Rows)

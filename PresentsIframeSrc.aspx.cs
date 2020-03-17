@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
-
+using regestrationV2.services;
 
 namespace regestrationV2
 {
@@ -50,17 +50,10 @@ namespace regestrationV2
 
         private void InsertToDB(string item, int price)
         {
-
-            string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\dev\HTML\regestrationV2\App_Data\User_Data.mdf;Integrated Security=True";
             string cmdStr = string.Format($"INSERT INTO Cart(OrderName, UserName, Price) VALUES (N'{item}', N'{Session["UserName"]}', {price})");
+            DBAccesor dB = ServiceLocator.Instance.GetService<DBAccesor>();
+            dB.runSqlCommand(cmdStr);
 
-            using (SqlConnection conObj = new SqlConnection(connectionString))
-            {
-                SqlCommand cmdObj = new SqlCommand(cmdStr, conObj);
-                conObj.Open();
-                cmdObj.ExecuteNonQuery();
-
-            }
         }
 
     }

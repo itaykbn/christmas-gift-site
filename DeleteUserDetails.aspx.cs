@@ -6,17 +6,17 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Data;
-
+using regestrationV2.services;
 
 namespace regestrationV2
 {
     public partial class WebForm2 : System.Web.UI.Page
     {
-        
+
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
             if ((string)Session["UserName"] == null)
             {
                 Session["ErrorText"] = "לאורח אין גישה לעמוד זה ";
@@ -25,17 +25,11 @@ namespace regestrationV2
             string btn = Request.Form["DelUsr"];
             if (btn != null)
             {
-                string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\dev\HTML\regestrationV2\App_Data\User_Data.mdf;Integrated Security=True";
-
-                using (SqlConnection conn = new SqlConnection(connectionString))
-                {
-                    string cmdString = string.Format("DELETE From Cart Where OrderId in (select c.OrderId from Cart c, UserDetails ud  where c.UserName = ud.UserName and ud.UserName =  N'{0}') Delete FROM UserDetails Where (UserName = N'{0}')", Session["UserName"]);
-                    SqlCommand cmd = new SqlCommand(cmdString, conn);
-                    conn.Open();
-                    cmd.ExecuteNonQuery();
-                    Response.Redirect("Login.aspx");
-                  
-                }
+                string cmdString = string.Format("DELETE From Cart Where OrderId in (select c.OrderId from Cart c, UserDetails ud  where c.UserName = ud.UserName and ud.UserName =  N'{0}') Delete FROM UserDetails Where (UserName = N'{0}')", Session["UserName"]);
+                DBAccesor adbAccesor = ServiceLocator.Instance.GetService<DBAccesor>();
+                adbAccesor.runSqlCommand(cmdString);
+                Response.Redirect("Login.aspx");
+                
             }
         }
     }
