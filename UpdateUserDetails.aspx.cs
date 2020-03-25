@@ -32,7 +32,11 @@ namespace regestrationV2
                 Session["ErrorText"] = "לאורח אין גישה לעמוד זה ";
                 Response.Redirect("ErrorPage.aspx");
             }
-            
+            if ((string)Session["Admin"] == "y")
+            {
+
+            }
+
             else
             {
                 user = Session["UserName"].ToString();

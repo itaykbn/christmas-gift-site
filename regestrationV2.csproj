@@ -72,10 +72,19 @@
       <DependentUpon>User_Data.mdf</DependentUpon>
     </Content>
     <Content Include="checkCartDel.js" />
+    <Content Include="tetrisData\tetrisStyle.css" />
+    <Content Include="tetrisData\tetrisMain.js" />
+    <Content Include="tetrisData\tetrisDraw.js" />
+    <Content Include="mineSweeperData\mineSweeperMain.js" />
+    <Content Include="pongData\pongAnimator.js" />
+    <Content Include="pongData\pongDraw.js" />
+    <Content Include="pongData\pongObject.js" />
+    <Content Include="pongData\pongMain.js" />
+    <Content Include="mineSweeperData\mineSweeperStyle.css" />
     <Content Include="updateDetails.js" />
     <Content Include="login.js" />
     <Content Include="regestation.js" />
-    <Content Include="stylesheet.css" />
+    <Content Include="styleSheet.css" />
     <Content Include="Web.config" />
     <Content Include="Register.aspx" />
     <Content Include="UserDetails.aspx" />
@@ -91,6 +100,15 @@
     <Content Include="Cart.aspx" />
     <Content Include="Order.aspx" />
     <Content Include="Pay.aspx" />
+    <Content Include="AdminUserDetails.aspx" />
+    <Content Include="UsersIframeSrc.aspx" />
+    <Content Include="Logout.aspx" />
+    <Content Include="Games.aspx" />
+    <Content Include="MineSweeper.aspx" />
+    <Content Include="Tetris.aspx" />
+    <Content Include="Pong.aspx" />
+    <Content Include="tetrisGameOver.aspx" />
+    <Content Include="tetrisHighScore.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="services\IAcessService.cs" />
@@ -196,6 +214,69 @@
     <Compile Include="Pay.aspx.designer.cs">
       <DependentUpon>Pay.aspx</DependentUpon>
     </Compile>
+    <Compile Include="AdminUserDetails.aspx.cs">
+      <DependentUpon>AdminUserDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminUserDetails.aspx.designer.cs">
+      <DependentUpon>AdminUserDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UsersIframeSrc.aspx.cs">
+      <DependentUpon>UsersIframeSrc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UsersIframeSrc.aspx.designer.cs">
+      <DependentUpon>UsersIframeSrc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Logout.aspx.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Logout.aspx.designer.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Games.aspx.cs">
+      <DependentUpon>Games.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Games.aspx.designer.cs">
+      <DependentUpon>Games.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MineSweeper.aspx.cs">
+      <DependentUpon>MineSweeper.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MineSweeper.aspx.designer.cs">
+      <DependentUpon>MineSweeper.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tetris.aspx.cs">
+      <DependentUpon>Tetris.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tetris.aspx.designer.cs">
+      <DependentUpon>Tetris.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pong.aspx.cs">
+      <DependentUpon>Pong.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pong.aspx.designer.cs">
+      <DependentUpon>Pong.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="tetrisGameOver.aspx.cs">
+      <DependentUpon>tetrisGameOver.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="tetrisGameOver.aspx.designer.cs">
+      <DependentUpon>tetrisGameOver.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="tetrisHighScore.aspx.cs">
+      <DependentUpon>tetrisHighScore.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="tetrisHighScore.aspx.designer.cs">
+      <DependentUpon>tetrisHighScore.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -207,6 +288,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

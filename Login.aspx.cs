@@ -12,23 +12,27 @@ namespace regestrationV2
 {
     public partial class WebForm6 : System.Web.UI.Page
     {
+        private XMLAccesor xmlAccessor = ServiceLocator.Instance.GetService<XMLAccesor>();
         protected void Page_Load(object sender, EventArgs e)
         {
-            Session["UserName"] = null;
-            Session["Password"] = null;
-            Session["Admin"] = null;
+            //Session["UserName"] = null;
+            //Session["Password"] = null;
+            //Session["Admin"] = null;
 
             if (Request.Form["submit"] != null)
             {      
                 string user = Request.Form["un"];
                 string pass = Request.Form["pass"];
-                
-                if (IsAdmin(user) == true)
+                string path = MapPath("AdminList.xml");
+                if (xmlAccessor.isExsists(user, path)) 
                 {
                     Session["Admin"] = "y";
+                    Session["UserName"] = user;
+                    Session["Password"] = pass;
+                    Response.Redirect("AdminUserDetails.aspx");
                 }
 
-                if (IsExist(user, pass))
+               else if (IsExist(user, pass))
                 {
                     Session["UserName"] = user;
                     Session["Password"] = pass;
@@ -52,20 +56,5 @@ namespace regestrationV2
             return dbAccessor.isExist(cmdStr);
         }
 
-        private bool IsAdmin(string user)
-        {
-            XMLAccesor xmlAccessor = ServiceLocator.Instance.GetService<XMLAccesor>();
-            DataSet ds = new DataSet();
-            ds.ReadXml(System.Web.HttpContext.Current.Server.MapPath("AdminList.xml"));
-            foreach (DataRow r in ds.Tables[0].Rows)
-            {
-                if (user.Equals(r[0]))
-                {
-                    return true;
-                }
-            }
-
-            return false;
-        }
     }
 }

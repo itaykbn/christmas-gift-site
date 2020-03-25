@@ -3,9 +3,19 @@
   <CD>
     <UserName>admin</UserName>
     <Password>Admin123</Password>
+    <FirstName>אבי</FirstName>
+    <LastName>כהן</LastName>
+    <Email>avic@gmail.com</Email>
+    <Phone>0525454541</Phone>
+    <Admin>True</Admin>
   </CD>
   <CD>
     <UserName>admin1</UserName>
-    <Password>adm1234</Password>
+    <Password>Adm1234</Password>
+    <FirstName>רם</FirstName>
+    <LastName>לוי</LastName>
+    <Email>raml@gmail.com</Email>
+    <Phone>0525454542</Phone>
+    <Admin>True</Admin>
   </CD>
 </CATALOG>

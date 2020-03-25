@@ -6,13 +6,5 @@
     <h1>List of all users in this site</h1>
         <br />
         <br />
-        <table align="center">
-        <tr>
-            <td style="direction: ltr; text-align: left; padding-top: 10px; padding-bottom: 10px;"><%=userTable %></td>
-        </tr>
-
-    </table>
-
-
-
+        <iframe height="800px" width="1200px" style="margin-left:22%" src="UsersIframeSrc.aspx" name="iframe_b" frameborder="0"></iframe>
 </asp:Content>

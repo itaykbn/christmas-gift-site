@@ -38,7 +38,7 @@
     </div>
     <br />
      <form>
-     <input  type="button" style="margin-left:550px" value="היכנס כאורח" onclick="window.location.href = 'UserDetails.aspx'" />
+     <%--<input  type="button" style="margin-left:550px" value="היכנס כאורח" onclick="window.location.href = 'UserDetails.aspx'" />--%>
       <br />
       <br />
 

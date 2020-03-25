@@ -11,17 +11,17 @@
             <tr>
                 <td>שם פרטי:</td>
                 <td><input type="text" name="fname"/></td>
-                <td><p style="display:none" id="fName">Invalid first name please re-enter</p></td>
+                <td><p style="display:none" id="fName">השם הפרטי יכול להכיל רק אותיות בעברית</p></td>
             </tr>
             <tr>
                 <td>שם משפחה</td>
                 <td><input type="text" name="lname" /></td>
-                <td><p style="display:none" id="lName">Invalid last name please re-enter</p></td>
+                <td><p style="display:none" id="lName">שם המשפחה יכול להכיל רק אותיות בעברית</p></td>
             </tr>
             <tr>
                 <td>תאריך לידה</td>
                 <td><input type="text" name="bd" /></td>
-                <td><p style="display:none" id="db">Invalid date of birth please re-enter</p></td>
+                <td><p style="display:none" id="db">אנא להכניס תאריך מלא שמופרד ב- /   </p></td>
             </tr>
             <tr>
                 <td>גיל</td>
@@ -30,17 +30,17 @@
             <tr>
                 <td>שם משתמש</td>
                 <td><input type="text" name="un"/></td>
-                <td><p style="display:none" id="un">Invalid user name please re-enter</p></td>
+                <td><p style="display:none" id="un">שם המשתמש יכול להכיל רק את התווים: A-Z או 0-9</p></td>
             </tr>
             <tr>
                 <td>סיסמה</td>
                 <td><input type="password" name="pass"/></td>
-                <td><p style="display:none" id="pass">Invalid password please re-enter</p></td>
+                <td><p style="display:none" id="pass">הסיסמה חייבת להכיל: אותיות גדולות וקטנות באנגלית ומספרים (אורכה 6-10) </p></td>
             </tr>
             <tr>
                 <td>אמת סיסמה</td>
                 <td><input type="password" name="passConf"/></td>
-                <td><p style="display:none" id="passConf">passwords does not match please re-enter</p></td>
+                <td><p style="display:none" id="passConf">הסיסמאות לא תואמות</p></td>
             </tr>
             <tr>
                 <td>כתובת</td>
@@ -50,7 +50,7 @@
             <tr>
                 <td>מייל</td>
                 <td><input type="text" name="mail"/></td>
-                <td><p style="display:none" id="mail">Invalid mail please re-enter</p></td>
+                <td><p style="display:none" id="mail">המייל לא תקין</p></td>
             </tr>
             <tr>
                 <td>מין</td>
@@ -60,7 +60,7 @@
              <tr>
                 <td>טלפון</td>
                 <td><input type="text" name="phone"/></td>
-                <td><p style="display:none" id="phone">Invalid phone please re-enter</p></td>
+                <td><p style="display:none" id="phone">הטלפון לא תקין</p></td>
             </tr>
             <tr>
                 <td style="width:144px; margin-right:115%; display:block;" colspan="2"><input name="submit" type="submit" value="הירשם"/></td>

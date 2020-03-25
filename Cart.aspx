@@ -30,5 +30,4 @@
     <br />
     <br />
     <input type="button"  value="הזמן" onclick="window.location.href = 'Order.aspx'" />
-    <input  type="button"  value="חזרה לחנות" onclick="window.location.href = 'PresentsPage.aspx'" />
 </asp:Content>

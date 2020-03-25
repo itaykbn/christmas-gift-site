@@ -15,14 +15,10 @@ namespace regestrationV2
         protected string userDetailsTable = "";
         public string userStr;
         protected string fullName = "";
-        protected string visibility = "visibility: hidden";
-
+        private XMLAccesor xmlAccessor = ServiceLocator.Instance.GetService<XMLAccesor>();
         protected void Page_Load(object sender, EventArgs e)
         {
-            if( (string)Session["Admin"] == "y")
-            {
-                visibility = "visibility: visible";
-            }
+
             userStr = (string)Session["UserName"];
             if(userStr == null  )
             {
@@ -31,6 +27,11 @@ namespace regestrationV2
                 fullName = "אין מידע";
                 userDetailsTable += "<table> <tr> <td> No Data <td> </tr> </table>";
             }
+            if((string)Session["Admin"] == "y")
+            {
+                Response.Redirect("AdminUserDetails.aspx");
+            }
+
             else
             {
                 string cmdString = string.Format("SELECT * FROM UserDetails WHERE ([UserName] = N'{0}')", Session["UserName"]);

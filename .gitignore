@@ -1,10 +1,6 @@
 .gradle/
 .idea/
-project/
-*.iml
-spark-warehouse/
-target/
-build/
-out/
-log/
-*/log/
+
+obj/
+bin/
+packages/
