@@ -18,9 +18,6 @@ namespace regestrationV2
         {
 
 
-
-
-
             string cmdString = "SELECT  FirstName, LastName, UserName, Password, Mail, Phone  FROM UserDetails";
 
             bool @continue = true;
@@ -76,9 +73,11 @@ namespace regestrationV2
                         + "</td>" + "<td>" + dataTable.Rows[i]["password"] + "</td>" + "<td>"
                         + dataTable.Rows[i]["Mail"] + "</td>" + "<td>" + dataTable.Rows[i]["Phone"]
                         + "</td><td>" + "<input type=\"checkbox\" name =\"chk" + i + "\" id =\"chk" + i + "\""
-                        + "/> " + "</td></tr>";
+                        + "/> " +"</td><td>" + $"<input id='{i}' type='button' value='סמן עדכון' onclick='checkUpdate(updt{i})' />" + "</td>/tr>";
                 }
             }
+           
         }
+       
     }
 }

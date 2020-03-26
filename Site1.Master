@@ -22,7 +22,7 @@
         }
 
         a {
-            font-size: x-large;
+            font-size: 20px;
         }
     </style>
 
@@ -33,7 +33,7 @@
 
     <input style="float: left" type="button" value="חזור" onclick="history.back()">
 
-    <span style="font-size: 50px; cursor: pointer; float: right; color: lightpink; background-image: url(menuBackground.png); padding: 10px; padding-top: 0;" onclick="openNav() ">&#9776; תפריט</span>
+    <span style="font-size: 50px; cursor: pointer; float: right;     color: #d4be1c; background-image: url(menuBackground.png); padding: 10px; padding-top: 0;" onclick="openNav() ">&#9776; תפריט</span>
     <div id="mySidenav" class="sidenav" dir="rtl">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <a href="HomePage.aspx">דף הבית</a>

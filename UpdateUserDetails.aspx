@@ -3,6 +3,10 @@
     <script src="updateDetails.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <br />
+    <br /> 
+    <br />
+    <br />
      <form name="UpdateForm" onsubmit="return validateForm()" action="UpdateUserDetails.aspx" method="post">
 
         <table align="center">

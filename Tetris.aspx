@@ -26,8 +26,11 @@
     <button id="start" onclick="init()" class="button" style="display:block">Start</button>
     <form action="Tetris.aspx" method="post">
     <input class="button" id="gameOver" name="menu" type="submit" value="Menu"/>
+         <p>
+    <input value="0" type="text" id="scoreDB" name="scoreDB" size="20" style="visibility: hidden"/>
+     </p>
     </form>
-    <input value="0" type="text" id="scoreDB" name="scoreDB" size="20" style="visibility: hidden" />
+   
         
 </body>
 </html>

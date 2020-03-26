@@ -19,10 +19,10 @@ body {
 </head>
 <body>
     
-    <input style="margin-top:40%" class="button"  value="Play again" onclick="window.location.href = 'Tetris.aspx'" />   
+    <input type="button" style="margin-top:40%" class="button"  value="Play again" onclick="window.location.href = 'Tetris.aspx'" />   
    
     <form >
-    <input  class="button" name="highScores"  value="High scores" onclick="window.location.href = 'tetrisHighScore.aspx'"/>
+    <input  type="button" class="button" name="highScores"  value="High scores" onclick="window.location.href = 'tetrisHighScore.aspx'"/>
     </form>
     <input  type="button" class="button" value="Back to games" onclick="window.location.href = 'Games.aspx'" />
         

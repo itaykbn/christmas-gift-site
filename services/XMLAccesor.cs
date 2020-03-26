@@ -43,7 +43,7 @@ namespace regestrationV2.services
             foreach (DataRow rw in ds.Tables[0].Rows)
             {
                 if ((string)rw["UserName"] == user) { 
-                    table +=  ("<table><tr><td> Username: " + rw["UserName"] + "</td></tr><tr><td> Password: " + rw["Password"] + "</td></tr><tr><td> Email: " + rw["Email"] + "</td></tr><tr><td> Phone: "  + rw["Phone"] + "</td>");
+                    table +=  ("<table  style='border:none'><tr><td> Username: " + rw["UserName"] + "</td></tr><tr><td> Password: " + rw["Password"] + "</td></tr><tr><td> Email: " + rw["Email"] + "</td></tr><tr><td> Phone: "  + rw["Phone"] + "</td>");
                     table += "</tr>";
                     fullName += rw["FirstName"] + " " + rw["LastName"];
                 }
@@ -51,7 +51,7 @@ namespace regestrationV2.services
             }
             table += "</table>";
             output[0] = table;
-            output[1] = fullName;
+            output[1] = fullName; 
             return output;
           
             

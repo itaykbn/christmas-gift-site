@@ -15,7 +15,7 @@ namespace regestrationV2
         {
             DBAccesor dB = ServiceLocator.Instance.GetService<DBAccesor>();
 
-            string cmdStr = string.Format("Select * From TetrisHighScore ORDER BY Score");
+            string cmdStr = string.Format("Select * From TetrisHighScore ORDER BY Score DESC ");
             var table = dB.runSelectCmd(cmdStr);
             for (int i = 0; i < table.Rows.Count; i++)
             {

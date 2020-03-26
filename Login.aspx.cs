@@ -15,12 +15,14 @@ namespace regestrationV2
         private XMLAccesor xmlAccessor = ServiceLocator.Instance.GetService<XMLAccesor>();
         protected void Page_Load(object sender, EventArgs e)
         {
-            //Session["UserName"] = null;
-            //Session["Password"] = null;
-            //Session["Admin"] = null;
+
 
             if (Request.Form["submit"] != null)
-            {      
+            {
+                Session["UserName"] = null;
+                Session["Password"] = null;
+                Session["Admin"] = null;
+
                 string user = Request.Form["un"];
                 string pass = Request.Form["pass"];
                 string path = MapPath("AdminList.xml");
@@ -36,6 +38,7 @@ namespace regestrationV2
                 {
                     Session["UserName"] = user;
                     Session["Password"] = pass;
+                    
                     Response.Redirect("UserDetails.aspx");
                 }
                 else

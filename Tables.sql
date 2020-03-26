@@ -30,7 +30,7 @@ select* from TetrisHighScore
 delete from  TetrisHighScore;
 
 
-
+Select * From TetrisHighScore ORDER BY Score DESC 
 
 
 

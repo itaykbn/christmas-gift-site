@@ -15,7 +15,7 @@ namespace regestrationV2
         protected int id = 0;
         protected int total;
         protected int totalAmount;
-        protected string cartTable = "<table>";
+        protected string cartTable = "<table  style='border:none'>";
         protected void Page_Load(object sender, EventArgs e)
         {
 

@@ -11,7 +11,12 @@ namespace regestrationV2
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
+            if ((string)Session["Admin"] == "y")
+            {
+                Session["ErrorText"] = "This account is for business only";
+                Response.Redirect("ErrorPage.aspx");
+            }
         }
     }
 }

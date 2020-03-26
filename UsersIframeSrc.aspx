@@ -30,8 +30,16 @@
 
         }
     }
+    void Button2_Click(object sender, EventArgs e)
+    {
+        if (Request.Form["demo2"] != "")
+        {
+            Session["UpdateByAdmin"] = Request.Form["demo"];
+            Response.Redirect("UpdateUserDetails.aspx");
+        }
 
 
+    }
 </script>
 
 <!DOCTYPE html>
@@ -65,15 +73,43 @@
             ::-webkit-scrollbar-thumb:hover {
                 background: #555;
             }
+
+
+
+        option {
+            color: black;
+            display: block;
+            font-size: 30px;
+            text-align: center;
+        }
+
+        select {
+            color: black;
+            display: block;
+            font-size: 30px;
+            text-align: center;
+        }
+
+        span {
+            color: black;
+            display: block;
+            font-size: 30px;
+            text-align: center;
+        }
+
+
+
+        body {
+            background-color: navajowhite;
+        }
     </style>
     <title></title>
 </head>
 <body>
 
+    <p>ניתן לעדכן רק משתמש אחד בכל פעם לכן הסימון נכשב רק למשתמש אחד</p>
 
-
-    <form id="form1" runat="server">
-
+    <form id="form1" runat="server" name="form1" method="post">
         <table align="center">
             <tr>
                 <td>
@@ -85,7 +121,6 @@
                         <option value="email">דוא&quotל</option>
                         <option value="phone">טלפון</option>
                     </select>
-                    <span>= </span>
                     <input type="text" id="txt1" name="txt1" placeholder="הכנס ערך" />
                 </td>
             </tr>
@@ -100,7 +135,6 @@
                         <option value="email">דוא&quotל</option>
                         <option value="phone">טלפון</option>
                     </select>
-                    <span>= </span>
                     <input type="text" id="txt2" name="txt2" placeholder="הכנס ערך" />
                     <input type="submit" value="סנן" name="sub" id="sub" />
                 </td>
@@ -109,15 +143,23 @@
                 <td id="err_where" style="color: red; font-weight: bold"></td>
             </tr>
         </table>
+
+
         <br />
         <br />
-        <table align="center" id="myTable" style="direction: rtl; text-align: right; padding-top: 10px; padding-bottom: 10px;"><%=userTable %></table>
+        <table align="center" class="zui-table" id="myTable" style="direction: rtl; text-align: right; padding-top: 10px; padding-bottom: 10px;"><%=userTable %></table>
         <asp:Button ID="Button1"
             Text="מחק משתמשים"
             OnClientClick="checkDel()"
             runat="server" OnClick="Button1_Click" />
         <p>
             <input type="text" id="demo" name="demo" size="20" style="visibility: hidden" />
+        </p>
+        <asp:Button ID="Button2"
+            Text="עדכן משתמש"
+            runat="server" OnClick="Button2_Click" />
+        <p>
+            <input type="text" id="demo2" name="demo2" size="20" style="visibility: hidden" />
         </p>
     </form>
     <%--    <script>
@@ -139,7 +181,7 @@
                     positions++;
                 }
             }
-            
+
             sqlStr = "(";
             for (var i = 0; i < positions; i++) {
                 alert(usersNames[i]);
@@ -151,6 +193,13 @@
             sqlStr += ")";
             document.getElementById("demo").value = sqlStr;
         }
+        function checkUpdate(id) {
+            var userName;
+            var row = id.slice(-1);
+            userName = document.getElementById("myTable").rows[row].cells[2].innerHTML;
+            document.getElementById("demo2").innerHTML = userName;
+        }
+
 
     </script>
 </body>

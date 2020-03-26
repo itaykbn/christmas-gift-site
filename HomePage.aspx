@@ -2,14 +2,12 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <h1>!!!ברוכים הבאים לאתר המתנות הגדול בעולם </h1>
-    <br />
-    <p style="font-size:x-large; text-decoration:underline;">!!!מבצע קריסמס</p>
-    <p>!!!עד ל 71% הנחה על כל המוצרים</p>
-    <br />
+    <h1>ברוכים הבאים לאתר המתנות הגדול בעולם </h1>
+    <p style="font-size:70px; text-decoration:underline;">!!!מבצע קריסמס</p>
+    <p>עד ל 71% הנחה על כל המוצרים</p>
     <p>???אז... למה אתם מחכים</p>
-    <p>!!!הירשמו וקבלו את המתנות שלכם</p>
-    <p style="font-size:smaller"> המבצע תקף עד ל 31 לחודש</p>
+    <p>     הירשמו וקבלו את המתנות שלכם</p>
+    <p style="font-size:30px"> המבצע תקף עד ל 31 לחודש</p>
     <br />
     <br />
     <img src="merryChristmas.jpeg" alt="merry Chrismas" >

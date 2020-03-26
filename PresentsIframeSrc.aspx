@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    
+
     <title></title>
     <link href="styleSheet.css" type="text/css" media="screen" rel="stylesheet" />
     <style>
@@ -13,7 +13,7 @@
         }
 
         td {
-            color: lightpink;
+            color: #d4be1c;
             text-align: left;
         }
 
@@ -43,9 +43,9 @@ Large Christmas Chocolates Selection Box 366g
         </tr>
         <tr>
 
-            <td style="text-align:center">
+            <td style="text-align: center">
                 <form name="chocolate" method="post">
-                    <input  name="cartChocolate" type="submit" value="add to cart " />
+                    <input name="cartChocolate" type="submit" value="add to cart " />
                 </form>
             </td>
         </tr>
@@ -71,7 +71,7 @@ Environmental needle pine artificial christmas wreath
             </td>
         </tr>
         <tr>
-            <td style="text-align:center">
+            <td style="text-align: center">
                 <form name="bush" method="post">
                     <input name="cartBush" type="submit" value="add to cart " />
                 </form>
@@ -102,7 +102,7 @@ App Controlled Heated Coffee Mug
             </td>
         </tr>
         <tr>
-            <td style="text-align:center">
+            <td style="text-align: center">
                 <form name="mug" method="post">
                     <input name="smartMug" type="submit" value="add to cart " />
                 </form>

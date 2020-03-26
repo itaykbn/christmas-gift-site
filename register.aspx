@@ -4,7 +4,7 @@
     <script src="regestation.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-     <h1>הכניסו את הפרטים שלכם בשדות הבאים וקבלו את החשבון שלכם</h1>
+     <h1>הכניסו את הפרטים וקבלו את החשבון שלכם</h1>
     <form name="RegestrationForm" onsubmit="return validateForm()" action="Register.aspx" method="post">
 
         <table align="center">
@@ -63,7 +63,7 @@
                 <td><p style="display:none" id="phone">הטלפון לא תקין</p></td>
             </tr>
             <tr>
-                <td style="width:144px; margin-right:115%; display:block;" colspan="2"><input name="submit" type="submit" value="הירשם"/></td>
+                <td style="width:144px; display:block;" colspan="2"><input style="margin-right:220px" name="submit" type="submit" value="הירשם"/></td>
             </tr>
         </table>
     </form>

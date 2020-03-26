@@ -17,6 +17,7 @@ namespace regestrationV2
         {
             if (Session["UserName"] != null)
             {
+                
                 bool chocolate = Request.Form["cartChocolate"] != null;
                 bool bush = Request.Form["cartBush"] != null;
                 bool mug = Request.Form["smartMug"] != null;

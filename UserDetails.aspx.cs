@@ -22,10 +22,7 @@ namespace regestrationV2
             userStr = (string)Session["UserName"];
             if(userStr == null  )
             {
-                userStr = "אורח";
-                Session["UserName"] = null;
-                fullName = "אין מידע";
-                userDetailsTable += "<table> <tr> <td> No Data <td> </tr> </table>";
+                Response.Redirect("Register.aspx");
             }
             if((string)Session["Admin"] == "y")
             {
@@ -41,7 +38,7 @@ namespace regestrationV2
                 for (int i = 0; i < dataTable.Rows.Count; i++)
                 {
                     fullName += dataTable.Rows[i]["FirstName"].ToString() + " " + dataTable.Rows[i]["LastName"].ToString();
-                    userDetailsTable += "<table><tr><td>User name: "
+                    userDetailsTable += "<table style='border:none'><tr><td>User name: "
                         + dataTable.Rows[i]["UserName"] + "</td></tr>" + "<tr><td>Password: "
                         + dataTable.Rows[i]["Password"] + "</td></tr>" + "<tr><td>Mail: "
                         + dataTable.Rows[i]["Mail"] + "</td></tr>" + "<tr><td>Phone: "

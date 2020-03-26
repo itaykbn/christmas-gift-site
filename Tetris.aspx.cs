@@ -14,6 +14,7 @@ namespace regestrationV2
         {
             string user = (string)Session["UserName"];
             if (Request.Form["menu"] != null)
+
             { 
                 DBAccesor dB = ServiceLocator.Instance.GetService<DBAccesor>();
                 if(user != null)

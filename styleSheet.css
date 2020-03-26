@@ -1,16 +1,56 @@
 ﻿
-td, th {
-    font-size: x-large;
+td {
+    font-size: xx-large;
     padding-left: 20px;
     padding-right: 20px;
     padding-bottom: 5px;
     padding-top: 5px;
+    /*background-color:white;*/
+
 }
 
-
+th {
+    font-size: 25px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    background-color: #90ee90;
+    border: solid 1px #90ee90;
+    color: #336B6B;
+    padding: 10px;
+    text-align: center;
+    text-shadow: 1px 1px 1px #fff;
+    box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.4);
+}
 tr {
     margin: 2px;
+    
 }
+
+/*.zui-table {
+    border: none;
+    border-collapse: collapse;
+    border-spacing: 0;
+    font: normal 13px Arial, sans-serif;
+}
+
+    .zui-table th thead {
+        background-color: #90ee90;
+        border: solid 1px #90ee90;
+        color: #336B6B;
+        padding: 10px;
+        text-align: left;
+        text-shadow: 1px 1px 1px #fff;
+        box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.4);
+    }
+
+    .zui-table tbody td {
+        border: solid 1px #90ee90;
+        color: #333;
+        padding: 10px;
+        text-shadow: 1px 1px 1px #fff;
+    }*/
 
 input[type=text], input[type=password] {
     width: 100%;
@@ -20,23 +60,26 @@ input[type=text], input[type=password] {
     border: 2px solid green;
     border-radius: 4px;
     display: block;
+    font-size: x-large;
 }
 
 input[type=button] {
     font-weight: bold;
-    width: 144px;
-    height: 30px;
-    background-color: forestgreen;
-    font-size: medium;
+    width: 250px;
+    height: 50px;
+    color: white;
+    background-color: #24b441;
+    font-size: xx-large;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
 
 input[type=submit] {
-    width: 168px;
-    background-color: forestgreen;
-    font-size: medium;
+    width: 250px;
+    background-color: #24b441;
+    color: white;
+    font-size: x-large;
     font-weight: bold;
-    height: 30px;
+    height: 50px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
@@ -45,7 +88,10 @@ table {
     border: solid;
     align-self: center;
     direction: rtl;
+
 }
+
+
 
 img {
     display: block;
@@ -60,13 +106,16 @@ img {
 
 h1 {
     text-align: center;
-    color: lightpink;
+    color: #d4be1c;
+    font-size: 70px;
+    font-weight: bold;
 }
 
 p {
-    color: lightpink;
+    /*color: #f7e2be;*/
+    color: #d4be1c;
     display: block;
-    font-size: larger;
+    font-size: 50px;
     text-align: center;
 }
 
@@ -93,7 +142,7 @@ p {
     .sidenav a {
         padding: 8px 8px 8px 32px;
         text-decoration: none;
-        font-size: 25px;
+        font-size: 30px;
         color: #818181;
         display: block;
         transition: 0.3s;

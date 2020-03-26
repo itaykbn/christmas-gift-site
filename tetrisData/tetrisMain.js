@@ -66,13 +66,14 @@ function main() {
                 //alert("Game-Over");
                 document.getElementById("gameOver").style.display = "block";
                 document.getElementById("scoreDB").value = score;
+                //alert(document.getElementById("scoreDB").value);
                 unactive = true;
 
             }
 
         }
     }
-        , 300);
+        , 200);
 
 }
 function moveObj() {

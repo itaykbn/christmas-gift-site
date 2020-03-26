@@ -25,27 +25,27 @@ namespace regestrationV2
         protected void Page_Load(object sender, EventArgs e)
         {
 
-           
-           
+
+
             if (Session["UserName"] == null)
             {
                 Session["ErrorText"] = "לאורח אין גישה לעמוד זה ";
                 Response.Redirect("ErrorPage.aspx");
             }
-            if ((string)Session["Admin"] == "y")
-            {
 
-            }
 
             else
             {
                 user = Session["UserName"].ToString();
-               
+                if ((string)Session["Admin"] == "y")
+                {
+                    user = (string)Session["UpdateByAdmin"];
+                }
                 string cmdStr = string.Format("SELECT  * FROM  UserDetails WHERE (UserName = N'{0}')", user);
                 DBAccesor dbAccesor = ServiceLocator.Instance.GetService<DBAccesor>();
                 DataTable dataTable = dbAccesor.runSelectCmd(cmdStr);
 
-               
+
                 password = dataTable.Rows[0]["Password"].ToString();
                 mail = dataTable.Rows[0]["Mail"].ToString();
                 phone = dataTable.Rows[0]["Phone"].ToString();
@@ -58,7 +58,7 @@ namespace regestrationV2
 
                 if (Request.Form["updateBtn"] != null)
                 {
-                   
+
                     password = Request.Form["pass"].ToString();
                     mail = Request.Form["mail"].ToString();
                     phone = Request.Form["phone"].ToString();
@@ -78,6 +78,11 @@ namespace regestrationV2
                     dataTable.Rows[0]["DateOfBirth"] = birthDate;
 
                     dbAccesor.updateTable(cmdStr, dataTable);
+                    if ((string)Session["Admin"] == "y")
+                    {
+                        Session["UpdateByAdmin"] = null;
+                        Response.Redirect("AllUsers.aspx");
+                    }
                     Response.Redirect("UserDetails.aspx");
                 }
             }
