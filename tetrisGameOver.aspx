@@ -6,6 +6,8 @@
 <head runat="server">
 
     <link href="tetrisData/tetrisStyle.css" rel="stylesheet" />
+            <link rel="icon" href="tetrisfavicon.png"/>
+
     <style>
 body {
     background: url(tetrisData/tetrisGameOver.jpg) no-repeat center center fixed;

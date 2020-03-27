@@ -62,9 +62,9 @@ namespace regestrationV2
             {
                 DBAccesor dbAccessor = ServiceLocator.Instance.GetService<DBAccesor>();
                 DataTable dataTable = dbAccessor.runSelectCmd(cmdString);
-                if(dataTable.Rows.Count == 0)
+                if (dataTable.Rows.Count == 0)
                 {
-                        userTable += "<tr><td colspan= '6' style='color:red ; font-weight:bold; text-align:center'>אין התאמות</td></tr>";
+                    userTable += "<tr><td colspan= '6' style='color:red ; font-weight:bold; text-align:center'>אין התאמות</td></tr>";
                 }
                 for (int i = 0; i < dataTable.Rows.Count; i++)
                 {
@@ -73,11 +73,12 @@ namespace regestrationV2
                         + "</td>" + "<td>" + dataTable.Rows[i]["password"] + "</td>" + "<td>"
                         + dataTable.Rows[i]["Mail"] + "</td>" + "<td>" + dataTable.Rows[i]["Phone"]
                         + "</td><td>" + "<input type=\"checkbox\" name =\"chk" + i + "\" id =\"chk" + i + "\""
-                        + "/> " +"</td><td>" + $"<input id='{i}' type='button' value='עדכן' onclick='checkUpdate({i})' />" + "</td> </tr>";
+                        + "/> " + "</td><td>" + $"<input id='{i}' style='width:100px' type='button' value='סמן' onclick='checkUpdate({i})' />" + "</td> </tr>";
                 }
             }
-           
+
         }
-       
+
+
     }
 }

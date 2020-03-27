@@ -5,6 +5,7 @@
 <html>
 <head runat="server">
     <link href="styleSheet.css" type="text/css" media="screen" rel="stylesheet" />
+    <link rel="icon" href="christmasFavicon.png">
     <title></title>
     <style>
         li {

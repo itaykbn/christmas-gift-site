@@ -4,6 +4,8 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+        <link rel="icon" href="pongFavicon.png"/>
+
 <title>Pong</title>
     <script src="/pongData/pongMain.js"></script>
     <script src="/pongData/pongObject.js"></script>

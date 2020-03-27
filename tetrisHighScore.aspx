@@ -4,6 +4,9 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+    <title>High scores</title>
+<link rel="icon" href="tetrisfavicon.png"/>
+
     <style>
         @font-face {
             font-family: Arcde;
@@ -48,7 +51,6 @@
             border-color: white;
         }
     </style>
-    <title></title>
 </head>
 <body>
     <input type="button" class="button" value="Menu" onclick="window.location.href = 'tetrisGameOver.aspx'" />

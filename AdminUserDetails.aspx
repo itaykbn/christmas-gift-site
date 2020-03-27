@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="AdminUserDetails.aspx.cs" Inherits="regestrationV2.WebForm14" CodeFile="~/AdminUserDetails.aspx.cs" %>
+﻿<%@ Page Title="Admin details" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="AdminUserDetails.aspx.cs" Inherits="regestrationV2.WebForm14" CodeFile="~/AdminUserDetails.aspx.cs" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>

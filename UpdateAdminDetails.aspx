@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="UpdateAdminDetails.aspx.cs" Inherits="regestrationV2.WebForm23" CodeFile="~/UpdateAdminDetails.aspx.cs" %>
+﻿<%@ Page Title="Update admin detalis" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="UpdateAdminDetails.aspx.cs" Inherits="regestrationV2.WebForm23" CodeFile="~/UpdateAdminDetails.aspx.cs" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script src="adminUpdateDetails.js"></script>
 </asp:Content>
