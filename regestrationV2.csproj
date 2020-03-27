@@ -72,6 +72,7 @@
       <DependentUpon>User_Data.mdf</DependentUpon>
     </Content>
     <Content Include="checkCartDel.js" />
+    <Content Include="adminUpdateDetails.js" />
     <Content Include="tetrisData\tetrisStyle.css" />
     <Content Include="tetrisData\tetrisMain.js" />
     <Content Include="tetrisData\tetrisDraw.js" />
@@ -109,6 +110,7 @@
     <Content Include="Pong.aspx" />
     <Content Include="tetrisGameOver.aspx" />
     <Content Include="tetrisHighScore.aspx" />
+    <Content Include="UpdateAdminDetails.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="services\IAcessService.cs" />
@@ -276,6 +278,13 @@
     </Compile>
     <Compile Include="tetrisHighScore.aspx.designer.cs">
       <DependentUpon>tetrisHighScore.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateAdminDetails.aspx.cs">
+      <DependentUpon>UpdateAdminDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateAdminDetails.aspx.designer.cs">
+      <DependentUpon>UpdateAdminDetails.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

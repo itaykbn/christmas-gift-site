@@ -1,13 +1,12 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <CATALOG>
   <CD>
     <UserName>admin</UserName>
     <Password>Admin123</Password>
-    <FirstName>אבי</FirstName>
-    <LastName>כהן</LastName>
+    <FirstName>אביב</FirstName>
+    <LastName>כץ</LastName>
     <Email>avic@gmail.com</Email>
-    <Phone>0525454541</Phone>
-    <Admin>True</Admin>
+    <Phone>8392844215</Phone>
   </CD>
   <CD>
     <UserName>admin1</UserName>
@@ -16,6 +15,5 @@
     <LastName>לוי</LastName>
     <Email>raml@gmail.com</Email>
     <Phone>0525454542</Phone>
-    <Admin>True</Admin>
   </CD>
 </CATALOG>

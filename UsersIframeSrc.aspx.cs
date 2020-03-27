@@ -13,7 +13,7 @@ namespace regestrationV2
     {
         public string deleteWhere = "";
         public string filterWhere = "";
-        protected string userTable = " <tr><th>שם פרטי</th><th>שם משפחה</th><th>שם משתמש</th><th>סיסמה</th><th>מייל</th><th>טלפון</th><th>בחר</th></tr>  ";
+        protected string userTable = " <tr><th>שם פרטי</th><th>שם משפחה</th><th>שם משתמש</th><th>סיסמה</th><th>מייל</th><th>טלפון</th><th>בחר</th><th>עדכן</th></tr>  ";
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -73,7 +73,7 @@ namespace regestrationV2
                         + "</td>" + "<td>" + dataTable.Rows[i]["password"] + "</td>" + "<td>"
                         + dataTable.Rows[i]["Mail"] + "</td>" + "<td>" + dataTable.Rows[i]["Phone"]
                         + "</td><td>" + "<input type=\"checkbox\" name =\"chk" + i + "\" id =\"chk" + i + "\""
-                        + "/> " +"</td><td>" + $"<input id='{i}' type='button' value='סמן עדכון' onclick='checkUpdate(updt{i})' />" + "</td>/tr>";
+                        + "/> " +"</td><td>" + $"<input id='{i}' type='button' value='עדכן' onclick='checkUpdate({i})' />" + "</td> </tr>";
                 }
             }
            

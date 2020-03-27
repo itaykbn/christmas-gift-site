@@ -81,7 +81,7 @@ namespace regestrationV2
                     if ((string)Session["Admin"] == "y")
                     {
                         Session["UpdateByAdmin"] = null;
-                        Response.Redirect("AllUsers.aspx");
+                        Response.Redirect("UsersIframeSrc.aspx");
                     }
                     Response.Redirect("UserDetails.aspx");
                 }

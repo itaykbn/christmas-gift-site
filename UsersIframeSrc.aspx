@@ -34,7 +34,7 @@
     {
         if (Request.Form["demo2"] != "")
         {
-            Session["UpdateByAdmin"] = Request.Form["demo"];
+            Session["UpdateByAdmin"] = Request.Form["demo2"];
             Response.Redirect("UpdateUserDetails.aspx");
         }
 
@@ -83,6 +83,7 @@
             text-align: center;
         }
 
+
         select {
             color: black;
             display: block;
@@ -102,12 +103,27 @@
         body {
             background-color: navajowhite;
         }
+
+        input[type='checkbox'] {
+            -webkit-appearance: none;
+            width: 30px;
+            height: 30px;
+            background: white;
+            border-radius: 5px;
+            border: 2px solid #555;
+        }
+
+            input[type='checkbox']:checked {
+                background: red;
+                
+               
+            }
     </style>
-    <title></title>
+    <title></title>     
 </head>
 <body>
 
-    <p>ניתן לעדכן רק משתמש אחד בכל פעם לכן הסימון נכשב רק למשתמש אחד</p>
+    <p style="color: black">ניתן לעדכן רק משתמש אחד בכל פעם לכן הסימון נחשב רק למשתמש אחד</p>
 
     <form id="form1" runat="server" name="form1" method="post">
         <table align="center">
@@ -148,18 +164,26 @@
         <br />
         <br />
         <table align="center" class="zui-table" id="myTable" style="direction: rtl; text-align: right; padding-top: 10px; padding-bottom: 10px;"><%=userTable %></table>
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 
+
+
         <asp:Button ID="Button1"
             Text="מחק משתמשים"
             OnClientClick="checkDel()"
             runat="server" OnClick="Button1_Click" />
-        <p>
-            <input type="text" id="demo" name="demo" size="20" style="visibility: hidden" />
-        </p>
+
         <asp:Button ID="Button2"
             Text="עדכן משתמש"
             runat="server" OnClick="Button2_Click" />
         <p>
-            <input type="text" id="demo2" name="demo2" size="20" style="visibility: hidden" />
+            <input type="text" id="demo2" name="demo2" size="20" style="display: none" />
+        </p>
+        <p>
+            <input type="text" id="demo" name="demo" size="20" style="display: none" />
         </p>
     </form>
     <%--    <script>
@@ -195,12 +219,28 @@
         }
         function checkUpdate(id) {
             var userName;
-            var row = id.slice(-1);
-            userName = document.getElementById("myTable").rows[row].cells[2].innerHTML;
-            document.getElementById("demo2").innerHTML = userName;
+            var remove = false;
+            if (document.getElementById("myTable").rows[id + 1].cells[7].style.backgroundColor == "red") {
+                remove = true;
+            }
+            for (var i = 0; i < document.getElementById("myTable").rows.length; i++) {
+                if (i == id + 1 && !remove) {
+                    document.getElementById("myTable").rows[id + 1].cells[7].style.backgroundColor = "red";
+
+
+                }
+                else if (i != 0) {
+                    document.getElementById("myTable").rows[i].cells[7].style.backgroundColor = "white";
+
+                }
+            }
+            
+            userName = document.getElementById("myTable").rows[id + 1].cells[2].innerHTML;
+            if (remove) {
+                userName = "";
+            }
+            document.getElementById("demo2").value = userName;
         }
-
-
     </script>
 </body>
 </html>

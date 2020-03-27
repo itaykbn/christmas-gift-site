@@ -26,6 +26,7 @@
 
 
         <input type="button" value="כל המשתמשים" onclick="window.location.href = 'AllUsers.aspx'" />
+        <input type="button" value="עדכן פרטים" onclick="window.location.href = 'UpdateAdminDetails.aspx'" />
 
     </div>
 
