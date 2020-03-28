@@ -58,5 +58,11 @@ namespace regestrationV2
                 throw new ApplicationException("The requested service is not registered");
             }
         }
+
+        public void Register(object o)
+        {
+            this.services.Add(o.GetType(), o);
+        }
+
     }
 }
