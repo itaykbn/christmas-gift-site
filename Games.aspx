@@ -126,13 +126,14 @@ to rotate them press the left arow key.
                 <img src="pong.png"></a>
             <div class="tooltip">
                 <p>Rules</p>
-                <pre class="tooltiptext">Pong is a two-dimensional sports game that simulates table tennis. 
+                <pre class="tooltiptext">Pong is a two-dimensional game that simulates table tennis. 
 The player controls an in-game paddle by moving it 
 vertically across the left or right side of the screen.
 They can compete against another player 
 controlling a second paddle on the opposing side. 
 Players use the paddles to hit a ball back and forth.
-First to 7 wins.
+First to 7 wins. to move left paddle -'S'(down) & 'W'(up)
+to move right paddle - up arrow(up) key down arrow key(down).
 </pre>
             </div>
         </div>

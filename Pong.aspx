@@ -30,6 +30,9 @@
             border-color:gray;
             margin-left:28%;
         }
+        html{
+            zoom:90%;
+        }
     </style>
 </head>
 <body>

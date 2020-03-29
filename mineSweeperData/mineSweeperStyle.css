@@ -17,7 +17,9 @@ H1 {
 #grid {
     margin-left: 30%;
 }
-
+html {
+    zoom: 80%;
+}
 @font-face {
     font-family: 'mineFont';
     src: url('mineFont.ttf');
