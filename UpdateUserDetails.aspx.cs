@@ -68,6 +68,22 @@ namespace regestrationV2
                     lName = Request.Form["lname"].ToString();
                     fName = Request.Form["fname"].ToString();
 
+                    
+                        if(gender == "")
+                        {
+                            gender = "No Data";
+                        }
+                        if (phone == "")
+                        {
+                            phone = "No Data";
+                        }
+                        if (address == "")
+                        {
+                        address = "No Data";
+                        }
+
+
+                    
                     dataTable.Rows[0]["FirstName"] = fName;
                     dataTable.Rows[0]["LastName"] = lName;
                     dataTable.Rows[0]["Password"] = password;
