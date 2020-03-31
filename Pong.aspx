@@ -20,10 +20,10 @@
         input[type=button]{
             direction:ltr;
             font-size: x-large;
-            
-            
-            
-            background-color:green;
+            color:white;           
+            background-color:#24b441;
+            width:200px;
+            height:50px;
         }
         canvas{
             border:solid;

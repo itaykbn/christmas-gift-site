@@ -2,6 +2,11 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <title>regestration</title>
     <script src="regestation.js"></script>
+    <style type="text/css">
+        .auto-style1 {
+            width: 231px;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
      <h1>הכניסו את הפרטים וקבלו את החשבון שלכם</h1>
@@ -63,7 +68,7 @@
                 <td><p style="display:none" id="phone">הטלפון לא תקין</p></td>
             </tr>
             <tr>
-                <td style="width:144px; display:block;" colspan="2"><input style="margin-right:220px" name="submit" type="submit" value="הירשם"/></td>
+                <td style=" display:block;" colspan="2"><input  name="submit" type="submit" value="הירשם" class="auto-style1"/></td>
             </tr>
         </table>
     </form>

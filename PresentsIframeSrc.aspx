@@ -45,7 +45,7 @@ Large Christmas Chocolates Selection Box 366g
 
             <td style="text-align: center">
                 <form name="chocolate" method="post">
-                    <input name="cartChocolate" type="submit" value="add to cart " />
+                    <input name="cartChocolate" type="submit" value="הוסף לעגלה " />
                 </form>
             </td>
         </tr>
@@ -73,7 +73,7 @@ Environmental needle pine artificial christmas wreath
         <tr>
             <td style="text-align: center">
                 <form name="bush" method="post">
-                    <input name="cartBush" type="submit" value="add to cart " />
+                    <input name="cartBush" type="submit" value="הוסף לעגלה " />
                 </form>
             </td>
         </tr>
@@ -104,7 +104,7 @@ App Controlled Heated Coffee Mug
         <tr>
             <td style="text-align: center">
                 <form name="mug" method="post">
-                    <input name="smartMug" type="submit" value="add to cart " />
+                    <input name="smartMug" type="submit" value="הוסף לעגלה " />
                 </form>
             </td>
         </tr>

@@ -59,7 +59,7 @@ p {
     }
 
 .button {
-    background-color: green;
+    background-color: #24b441;
     font-family: Arcde;
     font-size: xx-large;
     margin-left: 45%;
@@ -67,6 +67,6 @@ p {
     width: 250px;
     height: 50px;
     border-color: white;
-
+    color:white;
 }
 

@@ -65,7 +65,7 @@ input[type=text], input[type=password] {
 
 input[type=button] {
     font-weight: bold;
-    width: 250px;
+    width: 200px;
     height: 50px;
     color: white;
     background-color: #24b441;
@@ -74,10 +74,10 @@ input[type=button] {
 }
 
 input[type=submit] {
-    width: 250px;
+    width: 200px;
     background-color: #24b441;
     color: white;
-    font-size: x-large;
+    font-size: xx-large;
     font-weight: bold;
     height: 50px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;

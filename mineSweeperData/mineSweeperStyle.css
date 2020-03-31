@@ -91,7 +91,7 @@ html {
 
 
 .button {
-    background-color: green;
+    background-color: #24b441;
     font-family: mineFont;
     font-size: xx-large;
     margin-left: 45%;
@@ -99,4 +99,5 @@ html {
     width: 200px;
     height: 50px;
     border-color: white;
+    color:white;
 }
