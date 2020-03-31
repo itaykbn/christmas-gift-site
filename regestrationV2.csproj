@@ -111,6 +111,7 @@
     <Content Include="tetrisGameOver.aspx" />
     <Content Include="tetrisHighScore.aspx" />
     <Content Include="UpdateAdminDetails.aspx" />
+    <Content Include="UpdateUserAdmin.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="services\IAcessService.cs" />
@@ -285,6 +286,13 @@
     </Compile>
     <Compile Include="UpdateAdminDetails.aspx.designer.cs">
       <DependentUpon>UpdateAdminDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateUserAdmin.aspx.cs">
+      <DependentUpon>UpdateUserAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateUserAdmin.aspx.designer.cs">
+      <DependentUpon>UpdateUserAdmin.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

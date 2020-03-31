@@ -21,6 +21,7 @@ namespace regestrationV2
     {
 
         private static IServiceLocator instance = null;
+        //singleton
         public static IServiceLocator Instance
         {
             get
@@ -33,7 +34,7 @@ namespace regestrationV2
             }
         }
 
-
+        
         // map that contains pairs of interfaces and
         // references to concrete implementations
         private IDictionary<object, object> services;

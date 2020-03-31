@@ -73,7 +73,7 @@ namespace regestrationV2
                         + "</td>" + "<td>" + dataTable.Rows[i]["password"] + "</td>" + "<td>"
                         + dataTable.Rows[i]["Mail"] + "</td>" + "<td>" + dataTable.Rows[i]["Phone"]
                         + "</td><td>" + "<input type=\"checkbox\" name =\"chk" + i + "\" id =\"chk" + i + "\""
-                        + "/> " + "</td><td>" + $"<input id='{i}' style='width:100px' type='button' value='סמן' onclick='checkUpdate({i})' />" + "</td> </tr>";
+                        + "/> " + "</td><td>" + $"<input onClick='checkUpdate({i})' type=\"checkbox\" name =\"" + i + "\" id =\"" + i + "\"" + "/> " + "</td> </tr>";
                 }
             }
 

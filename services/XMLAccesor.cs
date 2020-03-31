@@ -15,8 +15,6 @@ namespace regestrationV2.services
     {
         public void read()
         {
-
-
             throw new NotImplementedException();
         }
         public bool isExsists(string user, string path)
@@ -71,8 +69,7 @@ namespace regestrationV2.services
                     output[2] = (string)rw["Email"];
                     output[3] = (string)rw["Phone"];
                     output[4] = (string)rw["FirstName"];
-                    output[5] = (string)rw["LastName"];
-                    
+                    output[5] = (string)rw["LastName"];                   
                 }
             }
             return output;

@@ -44,7 +44,7 @@ namespace regestrationV2
             {
                 cartTable +=
                     "<tr><td> Item: " + dataTable.Rows[i]["OrderName"] + "</td>"
-                    + "<td> ItemNum: " + dataTable.Rows[i]["OrderId"] + " </td ></tr> "
+                    + "<td> Item number: " + dataTable.Rows[i]["OrderId"] + " </td ></tr> "
                     + "<td> Price: " + dataTable.Rows[i]["Price"] + " </td >";
 
                 totalAmount += (int)dataTable.Rows[i]["Price"];

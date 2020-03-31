@@ -48,12 +48,8 @@ function init() {
         }
     }
     generateMines();
-
-
-
     function clickOnCell(cell, buttonclick) {
         if (cell.getAttribute("inactive") == "true") {
-
         }
         else if (buttonclick == 1) {
             if (cell.getAttribute("mark-mine") == "false") {
@@ -62,15 +58,9 @@ function init() {
                 if (cell.getAttribute("meta-mine") == "true") {
 
                     alert("game-over");
-
-
-
                     revealBombs();
-
                 }
-
                 else {
-
                     var mineCount = 0;
                     var cellRow = cell.parentNode.rowIndex;
                     var cellCol = cell.cellIndex;
@@ -82,7 +72,6 @@ function init() {
                             }
                         }
                     }
-
                     //cell.innerHTML = mineCount;               
                     switch (mineCount) {
                         case 0:
@@ -121,21 +110,13 @@ function init() {
                                     //alert(grid.rows[i].cells[j]);
                                     cell.innerHTML = " ";
                                     clickOnCell(grid.rows[i].cells[j], 1);
-
-
                                 }
                             }
                         }
-
-
                     }
-
-
                     checkWin();
-
                 }
             }
-
         }
         else if (buttonclick == 3) {
             if (cell.getAttribute("mark-mine") == "true") {
@@ -157,14 +138,11 @@ function init() {
                 if ((grid.rows[i].cells[j].getAttribute("meta-mine") == "false") && (grid.rows[i].cells[j].innerHTML == "")) {
                     win = false;
                 }
-
             }
         }
         if (win) {
-
             alert("winner");
             revealBombs();
-
         }
     }
 
@@ -175,9 +153,6 @@ function init() {
         var cell1 = grid.rows[rnd1].cells[rnd2];
         if (cell1.getAttribute("meta-mine") == "false") {
             cell1.setAttribute("meta-mine", "true");
-            // alert(cell.getAttribute("meta-mine") + " generateMines");
-
-            //cell1.innerHTML = "X";
             mines--;
             if (mines > 0) {
                 generateMines();
@@ -186,7 +161,6 @@ function init() {
         else {
             generateMines();
         }
-
     }
     function revealBombs() {
         for (var i = 0; i < 20; i++) {
@@ -195,28 +169,18 @@ function init() {
                 inactive = document.createAttribute("inactive");
                 inactive.value = "true";
 
-
                 if (cell.getAttribute("meta-mine") == "true") {
                     //cell.innerHTML = "X";
                     cell.className = "mine";
                 }
-
                 cell.setAttributeNode(inactive);
-
                 document.getElementById("easy").style.display = "block";
                 document.getElementById("medium").style.display = "block";
                 document.getElementById("hard").style.display = "block";
                 document.getElementById("games").style.display = "block";
-
-
-
-
             }
-
         }
     }
-
-
 }
 function difficulty(diff) {
     if (diff == "ez") {
@@ -232,8 +196,5 @@ function difficulty(diff) {
     document.getElementById("easy").style.display = "none";
     document.getElementById("medium").style.display = "none";
     document.getElementById("hard").style.display = "none";
-
     init();
-
-
 }

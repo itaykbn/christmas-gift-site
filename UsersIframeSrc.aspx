@@ -35,7 +35,7 @@
         if (Request.Form["demo2"] != "")
         {
             Session["UpdateByAdmin"] = Request.Form["demo2"];
-            Response.Redirect("UpdateUserDetails.aspx");
+            Response.Redirect("UpdateUserAdmin.aspx");
         }
 
 
@@ -45,7 +45,7 @@
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-    <title>All users</title>
+
 <head runat="server">
     <%--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
@@ -116,11 +116,13 @@
 
             input[type='checkbox']:checked {
                 background: red;
-                
-               
+            }
+
+            input[type='checkbox']::after {
+                background: white;
             }
     </style>
-    <title></title>     
+    <title>All Users</title>
 </head>
 <body>
 
@@ -221,21 +223,31 @@
         function checkUpdate(id) {
             var userName;
             var remove = false;
-            if (document.getElementById("myTable").rows[id + 1].cells[7].style.backgroundColor == "red") {
+            if (document.getElementById(id).checked == false) {
                 remove = true;
             }
-            for (var i = 0; i < document.getElementById("myTable").rows.length; i++) {
-                if (i == id + 1 && !remove) {
-                    document.getElementById("myTable").rows[id + 1].cells[7].style.backgroundColor = "red";
-
+            for (var i = 1; i < document.getElementById("myTable").rows.length; i++) {
+                if (i - 1 == id && !remove) {
+                    document.getElementById(i-1).checked = true;
 
                 }
-                else if (i != 0) {
-                    document.getElementById("myTable").rows[i].cells[7].style.backgroundColor = "white";
+                else {
+                    document.getElementById(i-1).checked = false;
 
                 }
             }
-            
+            //if (document.getElementById("myTable").rows[id + 1].cells[7].checked == false) {
+            //    remove = true;
+            //}
+            //for (var i = 0; i < document.getElementById("myTable").rows.length; i++) {
+
+            //    if (i != 0 && i != id + 1) {
+            //        //alert("unchecked");
+            //        document.getElementById("myTable").rows[i].cells[7].checked = false;
+
+            //    }
+            //}
+
             userName = document.getElementById("myTable").rows[id + 1].cells[2].innerHTML;
             if (remove) {
                 userName = "";

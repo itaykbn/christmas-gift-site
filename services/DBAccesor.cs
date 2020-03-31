@@ -9,7 +9,9 @@ namespace regestrationV2.services
 {
     public class DBAccesor : IAcessService
     {
-        string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\dev\HTML\christmas-gift-site\App_Data\User_Data.mdf;Integrated Security=True";
+        //string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\dev\HTML\christmas-gift-site\App_Data\User_Data.mdf;Integrated Security=True";
+
+        string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\User_Data.mdf;Integrated Security=True";
 
         public void read()
         {

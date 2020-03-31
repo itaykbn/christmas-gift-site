@@ -10,7 +10,7 @@
     </table>
     <br />
     <br />
-    <p> To delete the item from your cart enter the orderNumber next to it</p>
+    <p> To delete the item from your cart enter the item number next to it</p>
     <form id="delCart" runat="server" action="Cart.aspx" method="post" onsubmit="return validateForm()">
         <table align="center" >
             <tr>

@@ -25,8 +25,6 @@ namespace regestrationV2
         protected void Page_Load(object sender, EventArgs e)
         {
 
-
-
             if (Session["UserName"] == null)
             {
                 Session["ErrorText"] = "לאורח אין גישה לעמוד זה ";
@@ -34,18 +32,15 @@ namespace regestrationV2
             }
 
 
-            else
+            else 
             {
                 user = Session["UserName"].ToString();
-                if ((string)Session["Admin"] == "y")
-                {
-                    user = (string)Session["UpdateByAdmin"];
-                }
+
                 string cmdStr = string.Format("SELECT  * FROM  UserDetails WHERE (UserName = N'{0}')", user);
                 DBAccesor dbAccesor = ServiceLocator.Instance.GetService<DBAccesor>();
                 DataTable dataTable = dbAccesor.runSelectCmd(cmdStr);
 
-
+                
                 password = dataTable.Rows[0]["Password"].ToString();
                 mail = dataTable.Rows[0]["Mail"].ToString();
                 phone = dataTable.Rows[0]["Phone"].ToString();
@@ -94,11 +89,6 @@ namespace regestrationV2
                     dataTable.Rows[0]["DateOfBirth"] = birthDate;
 
                     dbAccesor.updateTable(cmdStr, dataTable);
-                    if ((string)Session["Admin"] == "y")
-                    {
-                        Session["UpdateByAdmin"] = null;
-                        Response.Redirect("UsersIframeSrc.aspx");
-                    }
                     Response.Redirect("UserDetails.aspx");
                 }
             }
