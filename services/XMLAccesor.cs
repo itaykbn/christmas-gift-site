@@ -44,7 +44,7 @@ namespace regestrationV2.services
             {
                 if ((string)rw["UserName"] == user)
                 {
-                    table += ("<table  style='border:none'><tr><td> Username: " + rw["UserName"] + "</td></tr><tr><td> Password: " + rw["Password"] + "</td></tr><tr><td> Email: " + rw["Email"] + "</td></tr><tr><td> Phone: " + rw["Phone"] + "</td>");
+                    table += ("<table  style='border:none'><tr><td> סיסמה: " + rw["Password"] + "</td></tr><tr><td> מייל: " + rw["Email"] + "</td></tr><tr><td> טלפון: " + rw["Phone"] + "</td>");
                     table += "</tr>";
                     fullName += rw["FirstName"] + " " + rw["LastName"];
                 }

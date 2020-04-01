@@ -3,11 +3,12 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script src="updateDetails.js"></script>
     <style>
-        .sidenav{
-            display:none;
+        .sidenav {
+            display: none;
         }
-        span{
-            display:none;
+
+        span {
+            display: none;
         }
     </style>
 </asp:Content>
@@ -77,7 +78,12 @@
             <tr>
                 <td>מין</td>
                 <td>
-                    <input type="text" name="gender" value="<%=gender %>" /></td>
+                    <input type="radio" id="gender_Male" name="gender" value="male" />
+                    זכר<br>
+                    <input type="radio" id="gender_Female" name="gender" value="female" />
+                    נקבה<br>
+                    <input type="radio" id="gender_Other" name="gender" value="other" />
+                אחר
                 <td>
                     <p style="display: none" id="gender">Invalid gender please re-enter</p>
                 </td>

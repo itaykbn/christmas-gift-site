@@ -43,9 +43,9 @@ namespace regestrationV2
             for (int i = 0; i < dataTable.Rows.Count; i++)
             {
                 cartTable +=
-                    "<tr><td> Item: " + dataTable.Rows[i]["OrderName"] + "</td>"
-                    + "<td> Item number: " + dataTable.Rows[i]["OrderId"] + " </td ></tr> "
-                    + "<td> Price: " + dataTable.Rows[i]["Price"] + " </td >";
+                    "<tr><td> פריט: " + dataTable.Rows[i]["OrderName"] + "</td>"
+                    + "<td> מספר פריט: " + dataTable.Rows[i]["OrderId"] + " </td > "
+                    + "<td> מחיר: " + dataTable.Rows[i]["Price"] + "$" + " </td ></tr>";
 
                 totalAmount += (int)dataTable.Rows[i]["Price"];
             }

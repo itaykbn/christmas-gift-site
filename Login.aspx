@@ -20,7 +20,7 @@
                 <td><p style="display:none" id="pass">Invalid password please re-enter</p></td>
             </tr>
             <tr>
-                <td style=" display:block; text-align:center;" colspan="2" ><input  name="submit" type="submit" value="היכנס"/></td>
+                <td colspan="2" ><input style="margin-right:220px"  name="submit" type="submit" value="היכנס"/></td>
             </tr>
         </table>
     </form>

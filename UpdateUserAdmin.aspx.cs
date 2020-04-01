@@ -43,7 +43,6 @@ namespace regestrationV2
                     mail = dataTable.Rows[0]["Mail"].ToString();
                     phone = dataTable.Rows[0]["Phone"].ToString();
                     address = dataTable.Rows[0]["Adress"].ToString();
-                    gender = dataTable.Rows[0]["Gender"].ToString();
                     birthDate = dataTable.Rows[0]["DateOfBirth"].ToString();
                     lName = dataTable.Rows[0]["LastName"].ToString();
                     fName = dataTable.Rows[0]["FirstName"].ToString();
@@ -56,15 +55,14 @@ namespace regestrationV2
                         mail = Request.Form["mail"].ToString();
                         phone = Request.Form["phone"].ToString();
                         address = Request.Form["address"].ToString();
-                        gender = Request.Form["gender"].ToString();
                         birthDate = Request.Form["bd"].ToString();
                         lName = Request.Form["lname"].ToString();
                         fName = Request.Form["fname"].ToString();
 
-
-                        if (gender == "")
+                        string gender = "Rather not say";
+                        if (Request.Form["gender"] != null)
                         {
-                            gender = "No Data";
+                            gender = Request.Form["gender"].ToString();
                         }
                         if (phone == "")
                         {

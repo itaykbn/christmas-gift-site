@@ -15,17 +15,17 @@
             </tr>
         </thead>
         <tr>
-            <td style="direction: ltr; text-align: left; padding-top: 10px; padding-bottom: 10px;"><%= userDetailsTable %>&nbsp;</td>
+            <td style="direction: ltr; text-align: right; padding-top: 10px; padding-bottom: 10px;"><%= userDetailsTable %>&nbsp;</td>
         </tr>
     </table>
     <br />
     <br />
     <br />
     <br />
-    <div style="margin-left: 50%">
+    <div style="margin-left: 44%">
 
 
-        <input type="button" value="כל המשתמשים" onclick="window.location.href = 'AllUsers.aspx'" />
+        <input type="button" style="width:260px" value="כל המשתמשים" onclick="window.location.href = 'AllUsers.aspx'" />
         <input type="button" value="עדכן פרטים" onclick="window.location.href = 'UpdateAdminDetails.aspx'" />
 
     </div>

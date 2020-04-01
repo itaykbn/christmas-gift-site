@@ -17,6 +17,7 @@ namespace regestrationV2
          */
         private string getNCleanRequestParamByName(string paramName)
         {
+            
             string request = Request.Form[paramName].Replace("'", "");
             if (request == "")
             {
@@ -42,8 +43,12 @@ namespace regestrationV2
                 string pass = getNCleanRequestParamByName("pass");
                 string address = getNCleanRequestParamByName("address");
                 string mail = getNCleanRequestParamByName("mail");
-                string gender = getNCleanRequestParamByName("gender");
                 string phone = getNCleanRequestParamByName("phone");
+                string gender = "Rather not say";
+                if(Request.Form["gender"] != null)
+                {
+                    gender = Request.Form["gender"].ToString();
+                }
 
                 Session["UserName"] = user;
                 if (mail != "" && user != "")

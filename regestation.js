@@ -1,15 +1,15 @@
 ﻿// gets form value by name(made for not duplicating code)
-function getFormValueByName(name) { 
+function getFormValueByName(name) {
     return document.forms["RegestrationForm"][name].value;
 }
 
 // writes a message in html
-function insertText(msg) { 
+function insertText(msg) {
     document.getElementById("age").innerHTML = msg;
 }
 
 // gets the year out of the date and returns it
-function GetYear(date) { 
+function GetYear(date) {
     var slashCount = 0
     var startInsert = false
     var year = "";
@@ -24,7 +24,7 @@ function GetYear(date) {
             startInsert = true
         }
     }
-   return year
+    return year
 }
 
 // validate mail has correct structure and return false not
@@ -39,13 +39,13 @@ function validateMail(mail) {
         if (mail[i] == "@") {
             hasAt = true;
         }
-        
+
     }
     return (hasDot && hasAt)
 }
 
 // checks the password and returns true if error and false if not
-function checkPassword(password, english, userNameRule) { 
+function checkPassword(password, english, userNameRule) {
 
     var upperCase = false;
     var lowerCase = false;
@@ -66,7 +66,7 @@ function checkPassword(password, english, userNameRule) {
     return validPassword
 }
 
- // checks the element ,decides wether to show the error block and returns if there is an error
+// checks the element ,decides wether to show the error block and returns if there is an error
 function checkElem(id, isCurrentError, isPrevError) {
     var errorP = document.getElementById(id);
     if (isCurrentError) {
@@ -78,7 +78,7 @@ function checkElem(id, isCurrentError, isPrevError) {
 }
 
 // validates the form and returns true if there are no errors and false if there are
-function validateForm() {  
+function validateForm() {
     var fName = getFormValueByName("fname");
     var lName = getFormValueByName("lname");
     var YearOBirth = GetYear(getFormValueByName("bd"));
@@ -94,6 +94,8 @@ function validateForm() {
     var validPasswordConfirmation = !(password == passConf);
     var isError = checkElem("passConf", validPasswordConfirmation, false);
 
+    var validGender = document.getElementById('gender_Male').checked == false && document.getElementById('gender_Female').checked == false && document.getElementById('gender_Other').checked == false;
+    isError = checkElem("gender", validGender, isError);
     var validFName = !hebrew.test(fName);
     isError = checkElem("fName", validFName, isError);
 
@@ -118,10 +120,10 @@ function validateForm() {
     isError = checkElem("mail", validMail, isError);
     var validPhone = !(phone.length == 10 && !isNaN(phone));
     if (phone == "") {
-      validPhone = false;
+        validPhone = false;
     }
     isError = checkElem("phone", validPhone, isError);
-    
+
 
 
     if (!isError) {

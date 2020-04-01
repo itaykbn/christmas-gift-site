@@ -93,6 +93,8 @@ function validateForm() {
     var validFName = !hebrew.test(fName);
     isError = checkElem("fName", validFName, isError);
 
+    var validGender = document.getElementById('gender_Male').checked == false && document.getElementById('gender_Female').checked == false && document.getElementById('gender_Other').checked == false;
+    isError = checkElem("gender", validGender, isError);
     var validLName = !hebrew.test(lName);
     isError = checkElem("lName", validLName, isError);
 

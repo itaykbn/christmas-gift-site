@@ -5,18 +5,18 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <table align="center">
         <tr>
-            <td style="direction: ltr; text-align: left; padding-top: 10px; padding-bottom: 10px;"><%=cartTable%></td>
+            <td style="direction: rtl; text-align: right; padding-top: 10px; padding-bottom: 10px;"><%=cartTable%></td>
         </tr>
     </table>
     <br />
     <br />
-    <p> To delete the item from your cart enter the item number next to it</p>
+    <p>כדי למחוק את הפריט עליך להכניס את מספר הפריט</p>
     <form id="delCart" runat="server" action="Cart.aspx" method="post" onsubmit="return validateForm()">
         <table align="center" >
             <tr>
 
             <td><input type="text" name="delId"/></td>
-            <td><p style="display:none" id="delId">Invalid number please re-enter</p></td>
+            <td><p style="display:none" id="delId">המספר לא נכון</p></td>
             </tr>
             <tr>
                 <td><input name="submit" type="submit" value="אישור" /></td>

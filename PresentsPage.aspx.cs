@@ -14,7 +14,7 @@ namespace regestrationV2
             
             if ((string)Session["Admin"] == "y")
             {
-                Session["ErrorText"] = "This account is for business only";
+                Session["ErrorText"] = "המשתמש הזה מיעוד לעסקים בלבד";
                 Response.Redirect("ErrorPage.aspx");
             }
         }

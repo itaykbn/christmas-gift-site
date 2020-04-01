@@ -19,7 +19,7 @@
             </tr>
         </thead>
         <tr>
-            <td style="border: none; direction: ltr; text-align: left; padding-top: 10px; padding-bottom: 10px"><%= userDetailsTable %>&nbsp;</td>
+            <td style="border: none; direction: ltr; text-align: right; padding-top: 10px; padding-bottom: 10px"><%= userDetailsTable %>&nbsp;</td>
         </tr>
     </table>
     <br />

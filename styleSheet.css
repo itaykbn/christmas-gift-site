@@ -8,6 +8,23 @@ td {
     /*background-color:white;*/
 
 }
+input[type=radio] {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 20px;
+    border: 2px solid #555;
+    
+}
+
+    input[type=radio]:checked {
+        background: red;
+    }
+    input[type=radio]:focus {
+        outline:none;
+    }
+
 
 th {
     font-size: 25px;
@@ -74,12 +91,12 @@ input[type=button] {
 }
 
 input[type=submit] {
-    width: 200px;
     background-color: #24b441;
     color: white;
     font-size: xx-large;
     font-weight: bold;
     height: 50px;
+    width: 200px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 

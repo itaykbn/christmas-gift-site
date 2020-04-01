@@ -121,6 +121,10 @@
             input[type='checkbox']::after {
                 background: white;
             }
+
+        input[type=checkbox]:focus {
+            outline: none;
+        }
     </style>
     <title>All Users</title>
 </head>
@@ -174,14 +178,16 @@
         &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 
 
 
-        <asp:Button ID="Button1"
+        <asp:Button ID="Button1" Width="300px"
             Text="מחק משתמשים"
             OnClientClick="checkDel()"
             runat="server" OnClick="Button1_Click" />
 
         <asp:Button ID="Button2"
+            Width="300px"
             Text="עדכן משתמש"
             runat="server" OnClick="Button2_Click" />
+
         <p>
             <input type="text" id="demo2" name="demo2" size="20" style="display: none" />
         </p>
@@ -228,11 +234,11 @@
             }
             for (var i = 1; i < document.getElementById("myTable").rows.length; i++) {
                 if (i - 1 == id && !remove) {
-                    document.getElementById(i-1).checked = true;
+                    document.getElementById(i - 1).checked = true;
 
                 }
                 else {
-                    document.getElementById(i-1).checked = false;
+                    document.getElementById(i - 1).checked = false;
 
                 }
             }

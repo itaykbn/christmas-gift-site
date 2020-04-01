@@ -14,11 +14,11 @@
 
         td {
             color: #d4be1c;
-            text-align: left;
+            text-align: right;
         }
 
         pre {
-            direction: ltr;
+            direction: rtl;
         }
     </style>
 </head>
@@ -30,12 +30,12 @@
             </td>
         </tr>
         <tr>
-            <td>price: 20$</td>
+            <td>מחיר: 20$</td>
         </tr>
         <tr>
             <td>
                 <pre> 
-Large Christmas Chocolates Selection Box 366g
+קופסת בחירה שוקולדים גדולה לחג המולד 366 גרם
 
                  </pre>
 
@@ -60,13 +60,13 @@ Large Christmas Chocolates Selection Box 366g
                 <img height="569px" width="569px" src="christmasBush.jpg" /></td>
         </tr>
         <tr>
-            <td>price: 30$</td>
+            <td>מחיר: 30$</td>
         </tr>
         <tr>
             <td>
                 <pre> 
-Environmental needle pine artificial christmas wreath 
-                 </pre>
+זר אור מלאכותי מחט סביבתי
+</pre>
 
             </td>
         </tr>
@@ -88,14 +88,14 @@ Environmental needle pine artificial christmas wreath
                 <img height="569px" width="569px" src="mug.jpg" /></td>
         </tr>
         <tr>
-            <td>price: 60$</td>
+            <td>מחיר: 60$</td>
         </tr>
         <tr>
             <td>
                 <pre> 
-Ember Temperature Control Smart Mug
-14 oz, 1-hr Battery Life, Black
-App Controlled Heated Coffee Mug
+ספל חכם לבקרת טמפרטורה
+חיי סוללה למשך שעה וחצי, שחור
+ספל קפה מחומם על ידי אפליקציות
 
                  </pre>
 

@@ -16,9 +16,9 @@
             </tr>
             
             <tr>
-                <td style="width:144px; margin-right:115%" colspan="2"><input type="button"  value="שלם" onclick="window.location.href = 'Pay.aspx'" /></td>
+                <td  colspan="2"><input style="margin-right:234px" type="button"  value="שלם" onclick="window.location.href = 'Pay.aspx'" /></td>
             </tr>
         </table>
     </form>
-    <h1>Total: <%=total %>$</h1>
+    <h1>סה"כ: <%=total %>$</h1>
 </asp:Content>

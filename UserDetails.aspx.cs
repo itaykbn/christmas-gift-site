@@ -20,11 +20,11 @@ namespace regestrationV2
         {
 
             userStr = (string)Session["UserName"];
-            if(userStr == null  )
+            if (userStr == null)
             {
                 Response.Redirect("Register.aspx");
             }
-            if((string)Session["Admin"] == "y")
+            if ((string)Session["Admin"] == "y")
             {
                 Response.Redirect("AdminUserDetails.aspx");
             }
@@ -38,13 +38,13 @@ namespace regestrationV2
                 for (int i = 0; i < dataTable.Rows.Count; i++)
                 {
                     fullName += dataTable.Rows[i]["FirstName"].ToString() + " " + dataTable.Rows[i]["LastName"].ToString();
-                    userDetailsTable += "<table style='border:none'><tr><td>User name: "
-                        + dataTable.Rows[i]["UserName"] + "</td></tr>" + "<tr><td>Password: "
-                        + dataTable.Rows[i]["Password"] + "</td></tr>" + "<tr><td>Mail: "
-                        + dataTable.Rows[i]["Mail"] + "</td></tr>" + "<tr><td>Phone: "
-                        + dataTable.Rows[i]["Phone"] + "</td></tr>" + "<tr><td>Address: "
-                        + dataTable.Rows[i]["Adress"] + "</td></tr>" + "<tr><td>Gender: "
-                        + dataTable.Rows[i]["Gender"] + "</td></tr>" + "<tr><td>Date of Birth: "
+                    userDetailsTable += "<table style='border:none'>"
+                        + "<tr><td>סיסמה: "
+                        + dataTable.Rows[i]["Password"] + "</td></tr>" + "<tr><td>מייל: "
+                        + dataTable.Rows[i]["Mail"] + "</td></tr>" + "<tr><td>טלפון: "
+                        + dataTable.Rows[i]["Phone"] + "</td></tr>" + "<tr><td>כתובת: "
+                        + dataTable.Rows[i]["Adress"] + "</td></tr>" + "<tr><td>מין: "
+                        + dataTable.Rows[i]["Gender"] + "</td></tr>" + "<tr><td>תאריך לידה: "
                         + dataTable.Rows[i]["DateOfBirth"] + "</td></tr>";
                 }
 

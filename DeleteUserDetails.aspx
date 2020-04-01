@@ -6,7 +6,7 @@
     <br />
         <form id="deleteUser" method="post" action="DeleteUserDetails.aspx">
         <table align="center" dir="ltr">
-            <tr><td>Are you sure that you want to delete user <%=Session["UserName"] %> ?</td></tr>
+            <tr><td>האם הנך בטוח שברצונך למחוק המשתמש:  <%=Session["UserName"] %> ?</td></tr>
             <tr><td><input type="submit" value="מחק משתמש" name="DelUsr" /></td></tr>
         </table>
     </form>
