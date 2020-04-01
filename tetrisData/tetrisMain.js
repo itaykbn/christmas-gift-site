@@ -9,10 +9,12 @@ var unactive;
 var mainInterval;
 var moveHorizont;
 again = false;
-function init() {
+function init(start) {
     document.getElementById("grid").style.display = "block";
-    document.getElementById("gameOver").style.display = "none";
-    document.getElementById("start").style.display = "none";
+    //document.getElementById("gameOver").style.display = "none";
+    if (start == "y") {
+        document.getElementById("start").style.display = "none";
+    }
 
     unactive = false;
     faze = 0;
@@ -35,7 +37,9 @@ function init() {
             cell.setAttributeNode(static);
         }
     }
-    main();
+    if (start == "y") {
+        main();
+    }
 
 }
 function main() {

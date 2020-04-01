@@ -5,21 +5,27 @@ var mines;
 
 
 function init() {
-
-    //mines = 60;
+    var inactive = false;
+    if (mines == null) {
+        inactive = true;
+    }
+        
     document.getElementById("grid").style.display = "block";
-    document.getElementById("games").style.display = "none";
+    //document.getElementById("games").style.display = "none";
     window.addEventListener('contextmenu', function (e) {
 
         e.preventDefault();
     }, false);
     grid = document.getElementById("grid");
+    //document.getElementById("introImage").style.display = 'none';
     grid.innerHTML = "";
     for (var i = 0; i < 20; i++) {
         row = grid.insertRow(i);
         for (var j = 0; j < 20; j++) {
             cell = row.insertCell(j);
-            cell.onmousedown = function () { clickOnCell(this, getMouseEvent(event)); };
+            if (!inactive) {
+                cell.onmousedown = function () { clickOnCell(this, getMouseEvent(event)); };
+            }
             mine = document.createAttribute("meta-mine");
             mark = document.createAttribute("mark-mine");
             mark.value = "false";
@@ -193,8 +199,8 @@ function difficulty(diff) {
         mines = 100;
     }
     //alert(mines);
-    document.getElementById("easy").style.display = "none";
-    document.getElementById("medium").style.display = "none";
-    document.getElementById("hard").style.display = "none";
+    //document.getElementById("easy").style.display = "none";
+    //document.getElementById("medium").style.display = "none";
+    //document.getElementById("hard").style.display = "none";
     init();
 }

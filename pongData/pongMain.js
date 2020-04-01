@@ -11,19 +11,20 @@ var wKey = false;
 var interval;
 var sKey = false;
 //function that initializes the canvas and switches css styles for the start of the game
-function init() {
+function init(play) {
     c = document.getElementById("myCanvas");
     ctx = c.getContext('2d');
     animator = new Animate(c);
-    document.getElementById("start").style.display = "none";
-    document.getElementById("games").style.display = "none";
+    //document.getElementById("start").style.display = "none";
+    //document.getElementById("games").style.display = "none";
     document.getElementById("scoreBoard").style.display = "block";
     document.getElementById("myCanvas").style.display = "block";
     document.getElementById("playAgain").style.display = "block";
     document.getElementById("player2").innerHTML = 0;
     document.getElementById("player1").innerHTML = 0;
-
-    start();
+    if (play == "y") {
+        start();
+    }
 }
 // the main funcrion where everything gets called from
 function start() {
