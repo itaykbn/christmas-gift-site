@@ -84,9 +84,12 @@
                 <br />
                 <br />
                 <br />
-                <input style="display: none;" id="playAgain" type="button" onclick="clearInterval(interval); init('y')" value="Play" />
-                <br />
-                <input id="games" type="button" value="Back to games" onclick="window.location.href = 'Games.aspx'" />
+                <table><tr>
+                    <td><input style="display: none;" id="playAgain" type="button" onclick="clearInterval(interval); init('y')" value="Play" /></td>
+                    <td><input id="games" type="button" value="Back to games" onclick="window.location.href = 'Games.aspx'" /></td>
+
+                </tr></table>
+
                 <br />
                 <div class="tooltip">
                     <p style="color: white; font-size: 30px">Rules</p>
