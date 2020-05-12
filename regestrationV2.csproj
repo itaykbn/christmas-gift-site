@@ -85,7 +85,7 @@
     <Content Include="updateDetails.js" />
     <Content Include="login.js" />
     <Content Include="regestation.js" />
-    <Content Include="styleSheet.css" />
+    <Content Include="GeneralStyle.css" />
     <Content Include="Web.config" />
     <Content Include="Register.aspx" />
     <Content Include="UserDetails.aspx" />

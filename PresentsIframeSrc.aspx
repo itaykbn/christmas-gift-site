@@ -6,7 +6,7 @@
 <head runat="server">
 
     <title>presents</title>
-    <link href="styleSheet.css" type="text/css" media="screen" rel="stylesheet" />
+    <link href="GeneralStyle.css" type="text/css" media="screen" rel="stylesheet" />
     <style>
         body {
             background-color: palegoldenrod;
@@ -15,10 +15,24 @@
         td {
             color: #d4be1c;
             text-align: right;
+            font-family: Dorian;
+            font-size: x-large;
+        }
+
+        input[type=submit] {
+            font-family: Dorian;
+            font-size: x-large;
+        }
+
+        @font-face {
+            font-family: 'Dorian';
+            src: url('DorianFont.ttf');
         }
 
         pre {
             direction: rtl;
+            font-family: Dorian;
+            font-size: x-large;
         }
     </style>
 </head>

@@ -53,7 +53,7 @@
 
 
     <script type="text/javascript" charset="utf-8" src=" https://requirejs.org/docs/release/2.3.5/minified/require.js"></script>
-    <link href="styleSheet.css" type="text/css" media="screen" rel="stylesheet" />
+    <link href="GeneralStyle.css" type="text/css" media="screen" rel="stylesheet" />
     <style>
         /* width */
         ::-webkit-scrollbar {
@@ -99,6 +99,14 @@
             text-align: center;
         }
 
+        @font-face {
+            font-family: 'Dorian';
+            src: url('DorianFont.ttf');
+        }
+
+        p {
+            font-family: Dorian;
+        }
 
 
         body {

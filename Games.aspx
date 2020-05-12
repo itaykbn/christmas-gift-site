@@ -26,6 +26,11 @@
             margin-left: 400px;
         }
 
+        @font-face {
+            font-family: 'Dorian';
+            src: url('DorianFont.ttf');
+        }
+
         a {
             color: red;
             opacity: 1;
@@ -34,6 +39,10 @@
             height: auto;
             transition: .5s ease;
             backface-visibility: hidden;
+            font-family:Dorian;
+        }
+        p{
+            font-family:Dorian;
         }
 
             a:hover {
@@ -52,6 +61,7 @@
                 background-color: black;
                 color: #fff;
                 text-align: left;
+                font-family:Dorian;
                 border-radius: 6px;
                 padding: 5px 0;
                 position: absolute;
@@ -59,7 +69,7 @@
                 bottom: -150%;
                 left: 50%;
                 margin-left: -500px;
-                font-size: 35px;
+                font-size: 30px;
                 /* Fade in tooltip - takes 1 second to go from 0% to 100% opac: */
                 opacity: 0;
                 transition: opacity 1s;
@@ -93,7 +103,8 @@
                 <img src="MineSweeper.png"></a>
             <div class="tooltip">
                 <p>Summery</p>
-                <pre class="tooltiptext">Minesweeper is a single-player puzzle video game. 
+                <pre class="tooltiptext">
+Minesweeper is a single-player puzzle video game. 
 The objective of the game is to clear a rectangular board 
 containing hidden "mines" or bombs without detonating any of them,
 with help from clues about the number of neighboring mines in each field.

@@ -4,7 +4,8 @@
 
 <html>
 <head runat="server">
-    <link href="styleSheet.css" type="text/css" media="screen" rel="stylesheet" />
+    <%--<link href="styleSheet.css" type="text/css" media="screen" rel="stylesheet" />--%>
+    <link href="GeneralStyle.css" type="text/css" media="screen" rel="stylesheet" />
     <link rel="icon" href="christmasFavicon.png">
     <title></title>
     <style>
@@ -20,10 +21,11 @@
             background-size: cover;
         }
 
-        
+
 
         a {
             font-size: 20px;
+            font-family: Dorian;
         }
     </style>
 
@@ -34,7 +36,7 @@
 
     <input style="float: left" type="button" value="חזור" onclick="history.back()">
 
-    <span style="font-size: 50px; cursor: pointer; float: right;     color: #d4be1c; background-image: url(menuBackground.png); padding: 10px; padding-top: 0;" onclick="openNav() ">&#9776; תפריט</span>
+    <span style="font-family:Dorian; font-size: 50px; cursor: pointer; float: right; color: #d4be1c; background-image: url(menuBackground.png); padding: 10px; padding-top: 0;" onclick="openNav() ">&#9776; תפריט</span>
     <div id="mySidenav" class="sidenav" dir="rtl">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <a href="HomePage.aspx">דף הבית</a>
